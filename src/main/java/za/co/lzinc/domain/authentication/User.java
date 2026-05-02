@@ -106,5 +106,20 @@ public class User {
             return this;
         }
 
+        public Builder copy(User user) {
+            this.userId = user.userId;
+            this.fullName = user.fullName;
+            this.email = user.email;
+            this.password = user.password;
+            this.phoneNumber = user.phoneNumber;
+            this.creationDate = user.creationDate;
+            this.currency = user.currency;
+            return this;
+        }
+
+        public User build(){
+            return new User(this);
+        }
+
     }
 }
