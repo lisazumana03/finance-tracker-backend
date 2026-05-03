@@ -51,6 +51,19 @@ public class Budget {
         return endDate;
     }
 
+    @Override
+    public String toString() {
+        return "Budget{" +
+                "budgetId='" + budgetId + '\'' +
+                ", userId=" + userId +
+                ", categoryId=" + categoryId +
+                ", limit=" + limit +
+                ", period=" + period +
+                ", startDate=" + startDate +
+                ", endDate=" + endDate +
+                '}';
+    }
+
     public static class Builder{
         private String budgetId;
         private User userId;
@@ -59,5 +72,56 @@ public class Budget {
         private Period period;
         private LocalDateTime startDate;
         private LocalDateTime endDate;
+
+        public Builder setBudgetId(String budgetId) {
+            this.budgetId = budgetId;
+            return this;
+        }
+
+        public Builder setUserId(User userId) {
+            this.userId = userId;
+            return this;
+        }
+
+        public Builder setCategoryId(Category categoryId) {
+            this.categoryId = categoryId;
+            return this;
+        }
+
+        public Builder setLimit(double limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        public Builder setPeriod(Period period) {
+            this.period = period;
+            return this;
+        }
+
+        public Builder setStartDate(LocalDateTime startDate) {
+            this.startDate = startDate;
+            return this;
+        }
+
+        public Builder setEndDate(LocalDateTime endDate) {
+            this.endDate = endDate;
+            return this;
+        }
+
+        public Builder copy(Budget budget){
+            this.budgetId = budget.budgetId;
+            this.userId = budget.userId;
+            this.categoryId = budget.categoryId;
+            this.limit = budget.limit;
+            this.period = budget.period;
+            this.startDate = budget.startDate;
+            this.endDate = budget.endDate;
+            return this;
+        }
+        
+        public Budget build() {
+            return new Budget(this);
+        }
+
     }
 }

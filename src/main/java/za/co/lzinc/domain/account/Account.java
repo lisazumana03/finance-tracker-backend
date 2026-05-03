@@ -45,6 +45,18 @@ public class Account {
         return creationDate;
     }
 
+    @Override
+    public String toString() {
+        return "Account{" +
+                "accountId='" + accountId + '\'' +
+                ", userId=" + userId +
+                ", accountName='" + accountName + '\'' +
+                ", accountType=" + accountType +
+                ", accountBalance=" + accountBalance +
+                ", creationDate=" + creationDate +
+                '}';
+    }
+
     public static class Builder{
         private String accountId;
         private User userId;

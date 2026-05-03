@@ -12,6 +12,18 @@ public class Category {
 
     private Category(Builder builder){}
 
+    @Override
+    public String toString() {
+        return "Category{" +
+                "categoryId='" + categoryId + '\'' +
+                ", userId=" + userId +
+                ", name='" + name + '\'' +
+                ", type=" + type +
+                ", colour='" + colour + '\'' +
+                ", icon='" + icon + '\'' +
+                '}';
+    }
+
     public static class Builder{
         private String categoryId;
         private User userId;
