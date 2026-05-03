@@ -146,7 +146,7 @@ public class Transaction {
         }
 
         public Builder setLocation(String location) {
-            this.location = location
+            this.location = location;
             return this;
         }
 
