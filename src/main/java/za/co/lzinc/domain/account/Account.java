@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 
 public class Account {
     private String accountId;
-    private User userId;
+    private User user;
     private String accountName;
     private AccountType accountType;
     private double accountBalance; //sensitive data
@@ -16,7 +16,7 @@ public class Account {
 
     private Account (Builder builder){
         this.accountId = builder.accountId;
-        this.userId = builder.userId;
+        this.user = builder.user;
         this.accountName = builder.accountName;
         this.accountType = builder.accountType;
         this.accountBalance = builder.accountBalance;
@@ -27,8 +27,8 @@ public class Account {
         return accountId;
     }
 
-    public User getUserId() {
-        return userId;
+    public User getUser() {
+        return user;
     }
 
     public String getAccountName() {
@@ -51,7 +51,7 @@ public class Account {
     public String toString() {
         return "Account{" +
                 "accountId='" + accountId + '\'' +
-                ", userId=" + userId +
+                ", userId=" + user +
                 ", accountName='" + accountName + '\'' +
                 ", accountType=" + accountType +
                 ", accountBalance=" + accountBalance +
@@ -61,7 +61,7 @@ public class Account {
 
     public static class Builder{
         private String accountId;
-        private User userId;
+        private User user;
         private String accountName;
         private AccountType accountType;
         private double accountBalance; //sensitive data
@@ -72,8 +72,8 @@ public class Account {
             return this;
         }
 
-        public Builder userId(User userId){
-            this.userId = userId;
+        public Builder setUser(User user){
+            this.user = user;
             return this;
         }
 
@@ -99,7 +99,7 @@ public class Account {
 
         public Builder copy(Account account){
             this.accountId = account.accountId;
-            this.userId = account.userId;
+            this.user = account.user;
             this.accountName = account.accountName;
             this.accountType = account.accountType;
             this.accountBalance = account.accountBalance;
