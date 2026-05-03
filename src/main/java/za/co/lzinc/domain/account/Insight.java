@@ -14,6 +14,8 @@ public class Insight {
     private List<Category> topCategories;
     private LocalDateTime generatedAt;
 
+    public Insight(){}
+
     private Insight(Builder builder){
         this.insightId = builder.insightId;
         this.userId = builder.userId;

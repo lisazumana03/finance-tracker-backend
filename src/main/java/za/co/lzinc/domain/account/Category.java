@@ -10,7 +10,40 @@ public class Category {
     private String colour;
     private String icon;
 
-    private Category(Builder builder){}
+    public Category(){}
+
+    private Category(Builder builder){
+        this.categoryId = builder.categoryId;
+        this.userId = builder.userId;
+        this.name = builder.name;
+        this.type = builder.type;
+        this.colour = builder.colour;
+        this.icon = builder.icon;
+    }
+
+    public String getCategoryId() {
+        return categoryId;
+    }
+
+    public User getUserId() {
+        return userId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public CategoryType getType() {
+        return type;
+    }
+
+    public String getColour() {
+        return colour;
+    }
+
+    public String getIcon() {
+        return icon;
+    }
 
     @Override
     public String toString() {
@@ -31,5 +64,49 @@ public class Category {
         private CategoryType type;
         private String colour;
         private String icon;
+
+        public Builder setCategoryId(String categoryId) {
+            this.categoryId = categoryId;
+            return this;
+        }
+
+        public Builder setUserId(User userId) {
+            this.userId = userId;
+            return this;
+        }
+
+        public Builder setName(String name) {
+            this.name = name;
+            return this;
+        }
+
+        public Builder setType(CategoryType type) {
+            this.type = type;
+            return this;
+        }
+
+        public Builder setColour(String colour) {
+            this.colour = colour;
+            return this;
+        }
+
+        public Builder setIcon(String icon) {
+            this.icon = icon;
+            return this;
+        }
+
+        public Builder copy(Category category){
+            this.categoryId = category.categoryId;
+            this.userId = category.userId;
+            this.name = category.name;
+            this.type = category.type;
+            this.colour = category.colour;
+            this.icon = category.icon;
+            return this;
+        }
+
+        public Category build(){
+            return new Category(this);
+        }
     }
 }

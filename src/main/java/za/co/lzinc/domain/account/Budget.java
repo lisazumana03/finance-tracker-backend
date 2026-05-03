@@ -13,6 +13,8 @@ public class Budget {
     private LocalDateTime startDate;
     private LocalDateTime endDate;
 
+    public Budget(){}
+
     private Budget(Builder builder){
         this.budgetId = builder.budgetId;
         this.userId = builder.userId;

@@ -12,6 +12,8 @@ public class Account {
     private double accountBalance; //sensitive data
     private LocalDateTime creationDate;
 
+    public Account(){}
+
     private Account (Builder builder){
         this.accountId = builder.accountId;
         this.userId = builder.userId;

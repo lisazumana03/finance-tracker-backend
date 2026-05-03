@@ -11,6 +11,8 @@ public class User {
     private LocalDateTime creationDate;
     private String currency;
 
+    public User(){}
+
     private User(Builder builder){
         this.userId = builder.userId;
         this.fullName = builder.fullName;
