@@ -1,8 +1,9 @@
 package za.co.lzinc.domain.authentication;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
-public class User {
+public class User implements Serializable {
     private int userId;
     private String fullName;
     private String email;

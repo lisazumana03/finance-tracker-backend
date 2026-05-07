@@ -1,11 +1,14 @@
 package za.co.lzinc.domain.account;
 
+import org.springframework.data.mongodb.core.mapping.Document;
 import za.co.lzinc.domain.authentication.User;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.List;
 
-public class Transaction {
+@Document
+public class Transaction implements Serializable {
     private String transactionId;
     private User userId;
     private Account accountId;

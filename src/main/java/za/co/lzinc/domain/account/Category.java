@@ -1,8 +1,12 @@
 package za.co.lzinc.domain.account;
 
+import org.springframework.data.mongodb.core.mapping.Document;
 import za.co.lzinc.domain.authentication.User;
 
-public class Category {
+import java.io.Serializable;
+
+@Document
+public class Category implements Serializable {
     private String categoryId;
     private User userId;
     private String name;

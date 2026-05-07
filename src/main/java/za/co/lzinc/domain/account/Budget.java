@@ -1,10 +1,13 @@
 package za.co.lzinc.domain.account;
 
+import org.springframework.data.mongodb.core.mapping.Document;
 import za.co.lzinc.domain.authentication.User;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
-public class Budget {
+@Document
+public class Budget implements Serializable {
     private String budgetId;
     private User userId;
     private Category categoryId;
