@@ -2,7 +2,6 @@ package za.co.lzinc.factory.authentication;
 
 import org.junit.jupiter.api.Test;
 import za.co.lzinc.domain.authentication.User;
-import za.co.lzinc.factory.authentication.UserFactory;
 
 import java.time.LocalDateTime;
 
