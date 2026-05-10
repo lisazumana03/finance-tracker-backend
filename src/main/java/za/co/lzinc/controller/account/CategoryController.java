@@ -2,13 +2,12 @@ package za.co.lzinc.controller.account;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import za.co.lzinc.domain.account.Category;
 import za.co.lzinc.service.account.impl.CategoryService;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+
+import java.util.List;
 
 
 @RestController
@@ -21,6 +20,12 @@ public class CategoryController {
     public ResponseEntity<Category> createCategory(@RequestBody Category category) {
         Category createdCategory = categoryService.create(category);
         return ResponseEntity.ok(createdCategory);
+    }
+
+    @GetMapping
+    public ResponseEntity<List<Category>> getAllCategories() {
+        List<Category> categories = categoryService.getAll();
+        return ResponseEntity.ok(categories);
     }
     
 }
