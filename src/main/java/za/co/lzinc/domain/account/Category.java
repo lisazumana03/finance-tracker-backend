@@ -5,7 +5,7 @@ import za.co.lzinc.domain.authentication.User;
 
 import java.io.Serializable;
 
-@Document
+@Document(collection = "category")
 public class Category implements Serializable {
     private String categoryId;
     private User userId;

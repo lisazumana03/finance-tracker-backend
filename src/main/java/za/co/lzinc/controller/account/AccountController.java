@@ -21,10 +21,22 @@ public class AccountController {
         return ResponseEntity.ok(createdAccount);
     }
 
-    @GetMapping
+    @GetMapping("/all")
     public ResponseEntity<List<Account>> getAllAccounts() {
         List<Account> accounts = accountService.getAll();
         return ResponseEntity.ok(accounts);
+    }
+
+    @PutMapping("/update/{id}")
+    public ResponseEntity<Account> updateAccount(@RequestBody Account account, @PathVariable String id) {
+        Account updatedAccount = accountService.update(account, id);
+        return ResponseEntity.ok(updatedAccount);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<Void> deleteAccount(@PathVariable String id) {
+        accountService.deleteById(id);
+        return ResponseEntity.noContent().build();
     }
 
 }

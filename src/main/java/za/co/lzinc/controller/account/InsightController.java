@@ -24,7 +24,7 @@ public class InsightController {
         return ResponseEntity.ok(createdInsight);
     }
 
-    @GetMapping
+    @GetMapping("/all")
     public ResponseEntity<List<Insight>> getAllInsights() {
         List<Insight> insights = insightService.getAll();
         return ResponseEntity.ok(insights);

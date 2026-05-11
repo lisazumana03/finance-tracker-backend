@@ -16,12 +16,12 @@ public class TransactionController {
     private TransactionService transactionService;
 
     @PostMapping("/create")
-    public ResponseEntity<Transaction> createTransaction(@RequestBody Transaction transaction) {
-        Transaction createdTransaction = transactionService.create(transaction);
-        return ResponseEntity.ok(createdTransaction);
+    public ResponseEntity<Transaction> createInsight() {
+        Transaction committedTransaction = transactionService.create(new Transaction());
+        return ResponseEntity.ok(committedTransaction);
     }
     
-    @GetMapping
+    @GetMapping("/all")
     public ResponseEntity<List<Transaction>> getAllTransactions() {
         List<Transaction> transactions = transactionService.getAll();
         return ResponseEntity.ok(transactions);

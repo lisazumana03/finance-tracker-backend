@@ -7,7 +7,7 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.List;
 
-@Document
+@Document(collection = "insight")
 public class Insight implements Serializable {
     private String insightId;
     private User userId;

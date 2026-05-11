@@ -7,7 +7,7 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.List;
 
-@Document
+@Document(collection = "user")
 public class Transaction implements Serializable {
     private String transactionId;
     private User userId;

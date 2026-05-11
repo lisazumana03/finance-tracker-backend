@@ -22,7 +22,7 @@ public class BudgetController {
         return ResponseEntity.ok(budgetService.create(new Budget()));  
     }
 
-    @GetMapping
+    @GetMapping("/all")
     public ResponseEntity<List<Budget>> getAllBudgets() {
         List<Budget> budgets = budgetService.getAll();
         return ResponseEntity.ok(budgets);

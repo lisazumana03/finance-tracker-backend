@@ -22,7 +22,7 @@ public class CategoryController {
         return ResponseEntity.ok(createdCategory);
     }
 
-    @GetMapping
+    @GetMapping("/all")
     public ResponseEntity<List<Category>> getAllCategories() {
         List<Category> categories = categoryService.getAll();
         return ResponseEntity.ok(categories);
