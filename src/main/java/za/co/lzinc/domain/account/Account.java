@@ -6,7 +6,7 @@ import za.co.lzinc.domain.authentication.User;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
-@Document(collection = "accounts")
+@Document(collection = "account")
 public class Account implements Serializable {
     private String accountId;
     private User user;

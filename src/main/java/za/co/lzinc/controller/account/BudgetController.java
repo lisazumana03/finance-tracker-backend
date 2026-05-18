@@ -19,7 +19,8 @@ public class BudgetController {
 
     @PostMapping("/create")
     public ResponseEntity<Budget> designBudget(){
-        return ResponseEntity.ok(budgetService.create(new Budget()));  
+        Budget createdBudget = budgetService.create(new Budget());
+        return ResponseEntity.ok(createdBudget);
     }
 
     @GetMapping("/all")

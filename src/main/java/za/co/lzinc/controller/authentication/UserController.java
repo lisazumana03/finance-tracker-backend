@@ -2,10 +2,7 @@ package za.co.lzinc.controller.authentication;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import za.co.lzinc.domain.authentication.User;
 import za.co.lzinc.service.authentication.impl.UserService;
 
@@ -18,7 +15,7 @@ public class UserController {
     private UserService userService;
 
     @PostMapping("/create")
-    public ResponseEntity<User> createUser(User user) {
+    public ResponseEntity<User> createUser(@RequestBody User user) {
         User createdUser = userService.create(user);
         return ResponseEntity.ok(createdUser);
     }
@@ -28,5 +25,13 @@ public class UserController {
         List<User> users = userService.getAll();
         return ResponseEntity.ok(users);
     }
-    
+
+    @GetMapping("/{email}")
+    public ResponseEntity<List<User>> getUsersByEmail(@PathVariable String email) {
+        List<User> users = userService.findByEmail(email);
+        if (users.isEmpty()) {
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(users);
+    }
 }
