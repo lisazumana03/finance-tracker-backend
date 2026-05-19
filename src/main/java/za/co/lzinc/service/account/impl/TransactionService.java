@@ -6,6 +6,7 @@ import za.co.lzinc.domain.account.Transaction;
 import za.co.lzinc.repository.account.TransactionRepository;
 import za.co.lzinc.service.account.ITransactionService;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -35,5 +36,15 @@ public class TransactionService implements ITransactionService {
     @Override
     public void deleteById(String s) {
         transactionRepository.deleteById(s);
+    }
+
+    @Override
+    public List<Transaction> findByAccountId(String accountId) {
+        return transactionRepository.findByAccountId(accountId);
+    }
+
+    @Override
+    public List<Transaction> findByDateRange(LocalDateTime startDate, LocalDateTime endDate) {
+        return transactionRepository.findByTransactionDate(startDate, endDate);
     }
 }
